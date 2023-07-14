@@ -11,6 +11,10 @@ public class Cofrinho {
         this.coinList.add(coin);
     }
 
+    public void remover(Moeda coin) {
+        this.coinList.remove(coin);
+    }
+
     public void listagemMoedas() {
         if (this.coinList.isEmpty()) {
             System.out.println("O cofrinho está vazio :(");
@@ -22,4 +26,17 @@ public class Cofrinho {
         }
     }
 
+    public double totalConvertido() {
+        if (this.coinList.isEmpty()) {
+            return 0;
+        }
+
+        double accValue = 0;
+
+        for (Moeda coin : this.coinList) {
+            accValue += coin.converter();
+        }
+
+        return accValue;
+    }
 }
