@@ -19,6 +19,8 @@ public class Menu {
         System.out.print("Escolha uma opção: ");
         String optionSelected= scanner.next();
 
+        System.out.println();
+
         switch (optionSelected) {
             case "0":
                 System.out.println("Programa encerrado");
@@ -36,6 +38,8 @@ public class Menu {
 
             case "3":
                 cofrinho.listagemMoedas();
+                System.out.println();
+
                 showMenu();
                 break;
 
@@ -79,6 +83,7 @@ public class Menu {
         }
 
         System.out.println("Moeda adicionada!");
+        System.out.println();
     }
 
     private void showMenuRemoveCoins() {
@@ -96,12 +101,15 @@ public class Menu {
         if (option == 1) {
             Real coin = new Real(valueCoin);
             cofrinho.remover(coin);
+            System.out.println("Moeda removida!");
         } else if (option == 2) {
             Dolar coin = new Dolar(valueCoin);
             cofrinho.remover(coin);
+            System.out.println("Moeda removida!");
         } else if (option == 3) {
             Euro coin = new Euro(valueCoin);
             cofrinho.remover(coin);
+            System.out.println("Moeda removida!");
         } else {
             System.out.println("Opção inválida!");
             showMenu();
