@@ -5,11 +5,24 @@ public class Euro extends Moeda {
 
     @Override
     public void info() {
-        System.out.print(" Euro - €" + valor);
+        System.out.println("Euro - €" + valor);
     }
 
     @Override
     public double converter() {
         return this.valor * 5.39;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+
+        if (this.valor != ((Euro) obj).valor) {
+            return false;
+        }
+
+        return true;
     }
 }
